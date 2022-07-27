@@ -25,7 +25,6 @@ public class ExperienciaResource {
         this.experienciaService = experienciaService;
     }
 
-    @CrossOrigin(origins="*")
     @GetMapping("/all")
     public ResponseEntity<List<Experiencia>> getAllExperiencias() {
         List<Experiencia> experiencias = experienciaService.findAllExperiencias();
@@ -46,7 +45,6 @@ public class ExperienciaResource {
         return new ResponseEntity<>(updateExperiencia, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins="*")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteExperiencia(@PathVariable("id") Long id) {
         experienciaService.deleteExperiencia(id);

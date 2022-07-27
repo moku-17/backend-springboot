@@ -25,7 +25,6 @@ public class EducacionResource {
         this.educacionService = educacionService;
     }
 
-    @CrossOrigin(origins="*")
     @GetMapping("/all")
     public ResponseEntity<List<Educacion>> getAllEducaciones() {
         List<Educacion> educaciones = educacionService.findAllEducaciones();
@@ -46,7 +45,6 @@ public class EducacionResource {
         return new ResponseEntity<>(updateEducacion, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins="*")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteEducacion(@PathVariable("id") Long id) {
         educacionService.deleteEducacion(id);

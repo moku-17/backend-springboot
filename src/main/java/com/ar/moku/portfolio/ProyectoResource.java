@@ -25,7 +25,6 @@ public class ProyectoResource {
         this.proyectoService = proyectoService;
     }
 
-    @CrossOrigin(origins="*")
     @GetMapping("/all")
     public ResponseEntity<List<Proyecto>> getAllProyectos() {
         List<Proyecto> proyectos = proyectoService.findAllProyectos();
@@ -46,7 +45,6 @@ public class ProyectoResource {
         return new ResponseEntity<>(updateProyecto, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins="*")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteProyecto(@PathVariable("id") Long id) {
         proyectoService.deleteProyecto(id);
