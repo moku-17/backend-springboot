@@ -31,6 +31,7 @@ public class EducacionResource {
         return new ResponseEntity<>(educaciones, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins="*")
     @PostMapping("/add")
     public ResponseEntity<Educacion> addEducacion(@RequestBody Educacion educacion) {
         Educacion newEducacion = educacionService.addEducacion(educacion);

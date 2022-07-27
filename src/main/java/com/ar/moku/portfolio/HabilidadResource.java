@@ -5,6 +5,7 @@ import com.ar.moku.portfolio.service.HabilidadService;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,12 +31,14 @@ public class HabilidadResource {
         return new ResponseEntity<>(habilidades, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins="*")
     @PostMapping("/add")
     public ResponseEntity<Habilidad> addHabilidad(@RequestBody Habilidad habilidad) {
         Habilidad newHabilidad = habilidadService.addHabilidad(habilidad);
         return new ResponseEntity<>(newHabilidad, HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins="*")
     @PutMapping("/update")
     public ResponseEntity<Habilidad> updateHabilidad(@RequestBody Habilidad habilidad) {
         Habilidad updateHabilidad = habilidadService.updateHabilidad(habilidad);
