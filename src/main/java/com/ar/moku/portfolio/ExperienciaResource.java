@@ -45,7 +45,6 @@ public class ExperienciaResource {
         return new ResponseEntity<>(updateExperiencia, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins="*")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteExperiencia(@PathVariable("id") Long id) {
         experienciaService.deleteExperiencia(id);
