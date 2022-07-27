@@ -25,6 +25,7 @@ public class HabilidadResource {
         this.habilidadService = habilidadService;
     }
 
+    @CrossOrigin(origins="*")
     @GetMapping("/all")
     public ResponseEntity<List<Habilidad>> getAllHabilidades() {
         List<Habilidad> habilidades = habilidadService.findAllHabilidades();
@@ -45,6 +46,7 @@ public class HabilidadResource {
         return new ResponseEntity<>(updateHabilidad, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins="*")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteHabilidad(@PathVariable("id") Long id) {
         habilidadService.deleteHabilidad(id);
