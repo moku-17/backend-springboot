@@ -22,7 +22,6 @@ public class PerfilResource {
         this.perfilService = perfilService;
     }
 
-    @CrossOrigin(origins="*")
     @GetMapping("/all")
     public ResponseEntity<List<Perfil>> getAllPerfiles() {
         List<Perfil> perfiles = perfilService.findAllPerfiles();
