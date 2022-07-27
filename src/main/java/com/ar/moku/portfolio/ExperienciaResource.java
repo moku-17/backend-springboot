@@ -5,6 +5,7 @@ import com.ar.moku.portfolio.service.ExperienciaService;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,18 +31,21 @@ public class ExperienciaResource {
         return new ResponseEntity<>(experiencias, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins="*")
     @PostMapping("/add")
     public ResponseEntity<Experiencia> addExperiencia(@RequestBody Experiencia experiencia) {
         Experiencia newExperiencia = experienciaService.addExperiencia(experiencia);
         return new ResponseEntity<>(newExperiencia, HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins="*")
     @PutMapping("/update")
     public ResponseEntity<Experiencia> updateExperiencia(@RequestBody Experiencia experiencia) {
         Experiencia updateExperiencia = experienciaService.updateExperiencia(experiencia);
         return new ResponseEntity<>(updateExperiencia, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins="*")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteExperiencia(@PathVariable("id") Long id) {
         experienciaService.deleteExperiencia(id);

@@ -5,6 +5,7 @@ import com.ar.moku.portfolio.service.EducacionService;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,12 +31,14 @@ public class EducacionResource {
         return new ResponseEntity<>(educaciones, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins="*")
     @PostMapping("/add")
     public ResponseEntity<Educacion> addEducacion(@RequestBody Educacion educacion) {
         Educacion newEducacion = educacionService.addEducacion(educacion);
         return new ResponseEntity<>(newEducacion, HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins="*")
     @PutMapping("/update")
     public ResponseEntity<Educacion> updateEducacion(@RequestBody Educacion educacion) {
         Educacion updateEducacion = educacionService.updateEducacion(educacion);
