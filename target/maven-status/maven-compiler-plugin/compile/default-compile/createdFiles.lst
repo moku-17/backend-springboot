@@ -22,4 +22,5 @@ com\ar\moku\portfolio\model\Perfil.class
 com\ar\moku\portfolio\model\Proyecto.class
 com\ar\moku\portfolio\model\Habilidad.class
 com\ar\moku\portfolio\ExperienciaResource.class
+com\ar\moku\portfolio\WebConfig.class
 com\ar\moku\portfolio\service\ExperienciaService.class
